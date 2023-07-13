@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">BMI Calculator - Turma D</string>
+    <string name="imc">IMC</string>
+    <string name="magreza_grave">Magreza grave</string>
+    <string name="abaixo_de_16">abaixo de 16</string>
+    <string name="magreza_moderada">Magreza moderada</string>
+    <string name="_16_16_9">16 - 16.9</string>
+    <string name="magreza_leve">Magreza leve</string>
+    <string name="_17_18_4">17 - 18.4</string>
+    <string name="saudavel">Saudável</string>
+    <string name="_18_5_24_9">18.5 - 24.9</string>
+    <string name="sobrepeso">Sobrepeso</string>
+    <string name="_25_29_9">25 - 29.9</string>
+    <string name="obesidade_grau_i">Obesidade Grau I</string>
+    <string name="_30_34_9">30 - 34.9</string>
+    <string name="obesidade_grau_ii">Obesidade Grau II</string>
+    <string name="_35_39_9">35 - 39.9</string>
+    <string name="obesidade_grau_iii">Obesidade Grau III</string>
+    <string name="acima_de_40">acima de 40</string>
+    <string name="nova_medicao">Nova medição</string>
+</resources>
