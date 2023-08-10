@@ -7,37 +7,52 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
+    <ImageButton
+        android:id="@+id/botao_voltar"
+        android:contentDescription="@string/voltar"
+        style="@style/botoes_do_titulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_back" />
+
     <TextView
         android:id="@+id/titulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Calculadora IMC"
-        android:layout_marginTop="32dp"
-        android:textSize="32sp"
+        style="@style/titulo_colorido"
+        android:text="@string/calculadora_imc"
+        app:layout_constraintBottom_toBottomOf="@+id/botao_voltar"
+        app:layout_constraintEnd_toStartOf="@+id/botao_info"
+        app:layout_constraintStart_toEndOf="@+id/botao_voltar"
+        app:layout_constraintTop_toTopOf="@+id/botao_voltar" />
+
+    <ImageButton
+        android:id="@+id/botao_info"
+        style="@style/botoes_do_titulo"
+        android:src="@drawable/baseline_info_24"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:contentDescription="O que é TMB?"/>
+
 
     <EditText
         android:id="@+id/campoAltura"
         android:layout_width="match_parent"
-        android:maxWidth="488dp"
         android:layout_height="wrap_content"
-        android:hint="Digite a sua altura (Ex: 1.60)"
-        android:inputType="numberDecimal"
+        android:layout_marginTop="32dp"
         android:digits="0123456789,."
+        android:hint="Digite a sua altura"
+        android:inputType="numberDecimal"
+        android:maxWidth="488dp"
         android:textSize="20sp"
-        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulo" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
         android:id="@+id/campoPeso"
         android:layout_width="match_parent"
         android:maxWidth="488dp"
         android:layout_height="wrap_content"
-        android:hint="Digite seu peso (Ex: 57.5)"
+        android:hint="Digite seu peso"
         android:inputType="numberDecimal"
         android:digits="0123456789,."
         android:textSize="20sp"
@@ -56,6 +71,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/campoPeso"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo"
+        app:srcCompat="@drawable/saudavel" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,42 +9,43 @@
 
     <ImageButton
         android:id="@+id/botao_voltar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
         android:contentDescription="@string/voltar"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
+        style="@style/botoes_do_titulo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/arrow_back" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        style="@style/titulo_colorido"
         android:text="@string/calculadora_tmb"
-        android:textColor="#9766C0"
-        android:textStyle="bold"
-        android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="@+id/botao_voltar"
+        app:layout_constraintEnd_toStartOf="@+id/botao_info"
         app:layout_constraintStart_toEndOf="@+id/botao_voltar"
         app:layout_constraintTop_toTopOf="@+id/botao_voltar" />
 
+    <ImageButton
+        android:id="@+id/botao_info"
+        style="@style/botoes_do_titulo"
+        android:src="@drawable/baseline_info_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="O que é TMB?"/>
+
     <TextView
         android:id="@+id/textView2"
+        style="@style/texto_colorido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/texto_colorido"
         android:text="Sexo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/botao_voltar" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chipGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:singleSelection="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
@@ -53,6 +54,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Masculino"
+            android:checked="true"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
             app:chipIcon="@drawable/baseline_male_24"
             tools:layout_editor_absoluteX="4dp"
             tools:layout_editor_absoluteY="108dp" />
@@ -62,6 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Feminino"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
             app:chipIcon="@drawable/baseline_female_24"
             tools:layout_editor_absoluteX="4dp"
             tools:layout_editor_absoluteY="108dp" />
@@ -85,12 +89,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3">
 
         <SeekBar
-            android:id="@+id/seekBar"
+            android:id="@+id/seekBar_idade"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="7" />
+            android:layout_weight="5"
+            android:max="130"/>
 
         <TextView
+            android:id="@+id/textView_idade"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -117,12 +123,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4">
 
         <SeekBar
-            android:id="@+id/seekBar2"
+            android:id="@+id/seekBar_altura"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="7" />
+            android:layout_weight="5"
+            android:max="280"/>
 
         <TextView
+            android:id="@+id/textView_altura"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -148,12 +156,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5">
 
         <SeekBar
-            android:id="@+id/seekBar3"
+            android:id="@+id/seekBar_peso"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="7" />
+            android:layout_weight="5"
+            android:max="25000"/>
 
         <TextView
+            android:id="@+id/textView_peso"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -163,12 +173,22 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/botao_calcular_tmb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Button"
+        android:text="@string/calcular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/baseline_local_fire_department_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>
