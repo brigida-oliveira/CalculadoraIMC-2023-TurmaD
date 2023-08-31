@@ -9,6 +9,7 @@ import androidx.appcompat.app.AlertDialog
 import com.nnt.myapplication.databinding.ActivityTmbactivityBinding
 import com.nnt.myapplication.databinding.DialogInfoTmbBinding
 import com.nnt.myapplication.databinding.DialogTmbBinding
+import com.nnt.myapplication.model.Calculo
 import java.text.DecimalFormat
 
 class TMBActivity : AppCompatActivity() {
@@ -106,7 +107,25 @@ class TMBActivity : AppCompatActivity() {
         builder.setView(dialogBinding.root)
 
         (DecimalFormat("#.##").format(tmb).replace(".",",") + " calorias").also { dialogBinding.textViewTMB.text = it }
-        dialogBinding.buttonTMB.setOnClickListener { alertDialog.dismiss() }
+        dialogBinding.buttonTMB.setOnClickListener {
+
+            Thread{
+                val app = application as App
+                val dao = app.db.calculoDao()
+
+                dao.inserir(Calculo(tipo = "tmb", resultado = tmb))
+
+                runOnUiThread{
+                    //Toast.makeText(this@TMBActivity, "Medição salva com sucesso!", Toast.LENGTH_LONG).show()
+                    val intent = Intent(this@TMBActivity, ListaCalculoActivity::class.java)
+                    intent.putExtra("tipo", "tmb")
+                    startActivity(intent)
+                }
+
+            }.start()
+
+            //alertDialog.dismiss()
+        }
 
         alertDialog = builder.create()
         alertDialog.show()

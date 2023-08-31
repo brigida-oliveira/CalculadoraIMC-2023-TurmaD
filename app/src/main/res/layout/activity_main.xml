@@ -64,13 +64,13 @@
     <Button
         android:id="@+id/botaoCalcular"
         android:layout_width="match_parent"
-        android:maxWidth="320dp"
         android:layout_height="wrap_content"
-        android:text="Calcular"
         android:layout_marginTop="16dp"
+        android:maxWidth="320dp"
+        android:text="Calcular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/campoPeso"/>
+        app:layout_constraintTop_toBottomOf="@+id/campoPeso" />
 
     <ImageView
         android:id="@+id/imageView"

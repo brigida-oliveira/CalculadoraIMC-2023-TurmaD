@@ -31,6 +31,8 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, ResultActivity::class.java)
             intent.putExtra("imc", imc.toString())
 
+            //binding.textViewTeste.text = "peso: $peso\naltura: $altura\nimc: $imc"
+
             startActivity(intent)
         }
     }

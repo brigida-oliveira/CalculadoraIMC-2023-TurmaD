@@ -19,4 +19,11 @@
     <string name="obesidade_grau_iii">Obesidade Grau III</string>
     <string name="acima_de_40">acima de 40</string>
     <string name="nova_medicao">Nova medição</string>
+    <string name="tmb">TMB</string>
+    <string name="voltar">Voltar</string>
+    <string name="calculadora_tmb">Calculadora TMB</string>
+    <string name="idade">Idade</string>
+    <string name="resposta_na_lista">Resulado: %1.2f, Data: %2$s</string>
+    <string name="calcular">Calcular</string>
+    <string name="calculadora_imc">Calculadora IMC</string>
 </resources>
