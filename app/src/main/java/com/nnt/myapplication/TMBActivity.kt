@@ -107,6 +107,7 @@ class TMBActivity : AppCompatActivity() {
         builder.setView(dialogBinding.root)
 
         (DecimalFormat("#.##").format(tmb).replace(".",",") + " calorias").also { dialogBinding.textViewTMB.text = it }
+
         dialogBinding.buttonTMB.setOnClickListener {
 
             Thread{
@@ -123,8 +124,7 @@ class TMBActivity : AppCompatActivity() {
                 }
 
             }.start()
-
-            //alertDialog.dismiss()
+            alertDialog.dismiss()
         }
 
         alertDialog = builder.create()
