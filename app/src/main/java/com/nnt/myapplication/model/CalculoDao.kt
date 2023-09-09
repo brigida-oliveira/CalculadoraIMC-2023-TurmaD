@@ -13,4 +13,10 @@ interface CalculoDao {
 
     @Query("SELECT * FROM Calculo WHERE tipo = :tipo")
     fun buscaRegistroPorTipo(tipo: String): List<Calculo>
+
+    @Update
+    fun atualizar(calculo: Calculo)
+
+    @Delete
+    fun apagar(calculo: Calculo): Int
 }

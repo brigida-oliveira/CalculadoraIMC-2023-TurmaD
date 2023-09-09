@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.SeekBar
 import androidx.appcompat.app.AlertDialog
 import com.nnt.myapplication.databinding.ActivityTmbactivityBinding
@@ -83,6 +85,20 @@ class TMBActivity : AppCompatActivity() {
         binding.botaoInfo.setOnClickListener { infoTMB() }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_listar){
+            val intent = Intent(this, ListaCalculoActivity::class.java)
+            intent.putExtra("tipo", "tmb")
+            startActivity(intent)
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     fun calcularTMB(idade: Int, altura: Int, peso: Double) {
         var tmb = 0.0
 
@@ -114,7 +130,13 @@ class TMBActivity : AppCompatActivity() {
                 val app = application as App
                 val dao = app.db.calculoDao()
 
-                dao.inserir(Calculo(tipo = "tmb", resultado = tmb))
+                val atualizaId = intent.extras?.getInt("atualizaId")
+
+                if (atualizaId != null) {
+                    dao.atualizar(Calculo(id = atualizaId, tipo = "tmb", resultado = tmb))
+                } else {
+                    dao.inserir(Calculo(tipo = "tmb", resultado = tmb))
+                }
 
                 runOnUiThread{
                     //Toast.makeText(this@TMBActivity, "Medição salva com sucesso!", Toast.LENGTH_LONG).show()
