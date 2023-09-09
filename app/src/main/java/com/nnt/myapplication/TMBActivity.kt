@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.SeekBar
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.nnt.myapplication.databinding.ActivityTmbactivityBinding
 import com.nnt.myapplication.databinding.DialogInfoTmbBinding
@@ -139,10 +140,7 @@ class TMBActivity : AppCompatActivity() {
                 }
 
                 runOnUiThread{
-                    //Toast.makeText(this@TMBActivity, "Medição salva com sucesso!", Toast.LENGTH_LONG).show()
-                    val intent = Intent(this@TMBActivity, ListaCalculoActivity::class.java)
-                    intent.putExtra("tipo", "tmb")
-                    startActivity(intent)
+                    Toast.makeText(this@TMBActivity, "Medição salva com sucesso!", Toast.LENGTH_LONG).show()
                 }
 
             }.start()

@@ -4,6 +4,8 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import com.nnt.myapplication.databinding.ActivityResultBinding
 
 class ResultActivity : AppCompatActivity() {
@@ -46,5 +48,19 @@ class ResultActivity : AppCompatActivity() {
         } else {
             binding.imagemMedidor.setImageResource(R.drawable.obesidade_grau_iii)
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_listar){
+            val intent = Intent(this, ListaCalculoActivity::class.java)
+            intent.putExtra("tipo", "imc")
+            startActivity(intent)
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

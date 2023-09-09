@@ -99,7 +99,9 @@ class ListaCalculoActivity : AppCompatActivity(), OnListClickListener {
     override fun onClick(id: Int, tipo: String) {
         when(tipo) {
             "imc" -> {
-
+                val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra("atualizaId", id)
+                startActivity(intent)
             }
             "tmb" -> {
                 val intent = Intent(this, TMBActivity::class.java)
